@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>SurgiSol</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- MDB CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <script src="https://kit.fontawesome.com/df4fa444c6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgb(249, 248, 236);
+            /* background-color: rgb(250, 236, 250); */
+        }
+
+        .office-item {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .office-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .office-img {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%;
+            /* Aspect ratio 16:9 */
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        .office-img img {
+            background-color: white;
+            transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+            display: block;
+            width: 100%;
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .office-img:hover img {
+            transform: scale(1.1);
+            filter: brightness(0.8);
+        }
+
+        .office-item:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .office-item:hover:before {
+            opacity: 1;
+        }
+
+        .office-item:hover .office-img img {
+            transform: scale(1.15);
+            filter: brightness(0.6);
+        }
+
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+
+            height: 100%;
+
+            /* Ensures image covers the container without distortion */
+            border-radius: 10px;
+            /* Optional: Rounded corners */
+        }
+
+        .owl-carousel .testimonial-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .owl-carousel .testimonial-image {
+            width: 100%;
+            /* Ensure the image takes full width */
+            max-height: 500px;
+            /* Adjust as necessary to keep consistent image size */
+            overflow: hidden;
+            /* Ensures no overflow for larger images */
+        }
+
+
+        .logo-large {
+            width: 285px;
+            height: 65px;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .logo-small {
+            width: 100%;
+            height: 40px;
+        }
+
+        .mid-continer {
+            width: 90%;
+        }
+
+        .new-muted {
+            color: rgb(54, 54, 54);
+            font-weight: 450;
+        }
+
+        .for_back {
+            background: url('img/surroundscop_footer_up.png');
+            background-size: cover;
+            background-attachment: initial;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            height: 50vw;
+            background-position: center;
+        }
+
+        @media (max-width:500px) {
+            .surroundscop_h1 {
+                font-size: 20px;
+            }
+        }
+
+        .new-background-color {
+            background-color: rgb(249, 248, 236) !important;
+        }
+
+        body {
+            background-color: rgb(249, 248, 236) !important;
+        }
+        .section-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 80px 60px;
+            background-color: #ffffff;
+        }
+
+        .section-info-content {
+            flex: 1;
+        }
+
+        .section-info-content h1 {
+            color: #2c3e8c;
+            font-size: calc(1.425rem + 2.1vw);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px !important;
+        }
+
+        .section-info-content p {
+            font-size: calc(0.3rem + 1vw) !important;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .section-info .badge-container {
+            display: flex;
+            margin: 20px 0;
+            justify-content: start;
+            gap: 20px;
+            margin: 40px 0px !important;
+        }
+
+        .section-info .badge {
+            display: flex;
+            flex-direction: column;
+            font-size: calc(1rem + 0.2vw);
+            padding: calc(1rem + 0.2vw);;
+            align-items: center;
+            border: 1px solid rgb(197, 186, 186);
+            box-shadow: #575757cf 2px 2px 8px;
+        }
+
+        .section-info .badge img {
+            width: 40px;
+            margin-bottom: 10px;
+        }
+
+        .section-info .badge p {
+            margin: 0;
+            font-weight: bold;
+            font-size: calc(0.3rem + 1vw);
+        }
+
+        .section-info .features {
+            display: flex;
+            align-items: inherit;
+            margin-bottom: 40px !important;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .section-info .feature {
+            background-color: #2c3e8c;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-right: 10px;
+            width:calc(5rem + 2vw);
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: calc(0.7rem + 0.2vw);
+            box-shadow: 0 .5rem 1rem rgb(0 0 0 / 70%);
+        }
+
+        .section-info .image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-info .image-container img {
+            width: calc(15rem + 10vw) ;
+            height: calc(20rem + 10vw);
+            box-shadow: #1c1c944f 7px 6px 10px;
+        }
+
+
+        @media (max-width:827px) {
+            .section-info .image-container img {
+                margin-top: 30px;
+            }
+
+            .section-info .badge img {
+                
+                margin-bottom: 10px;
+            }
+
+            .section-info .features {
+                justify-content: center;
+
+            }
+
+            .section-info .badge-container {
+                justify-content: center;
+            }
+
+           
+
+        }
+
+        @media (max-width:420px) {
+            .section-info{
+                padding: 70px 20px;
+            }
+            .section-info .badge-container {
+            flex-wrap: wrap;
+        }
+        .section-info-content p {
+            font-size: calc(0.5rem + 1vw) !important;
+            
+        }
+
+        }
+        .video-cards {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid px-5 d-none d-lg-block" style=" background-color:rgb(249, 248, 236);">
+        <div class="row gx-0 align-items-center">
+            <div class="col-lg-5 text-center text-lg-start mb-lg-0">
+                <div class="d-flex">
+                    <a href="#" class="text-dark me-4"><i
+                            class="fas fa-envelope text-secondary me-2"></i>service@unisol.org.in</a>
+                    <a href="tel:+919325312125" class="text-dark me-0"><i
+                            class="fas fa-phone-alt text-secondary me-2"></i>+91 932 531 2125</a>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a href="#" class="text-dark me-2"> Help</a><small> / </small>
+                    <a href="#" class="text-dark mx-2"> Support</a><small> / </small>
+                    <a href="#" class="text-dark ms-2"> Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <div class="container-fluid nav-bar p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-3 py-2 bg-white">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <img src="public/img/logo/SurgiSol Logo SVG.svg" id="logo" class="img-fluid logo-large me-2"
+                    alt="UniSol Logo" style="width: 240px; height: 90px;">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class=" text-black"><i class="fa-solid fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto">
+                    <a href="index.html" class="nav-item nav-link active text-dark">Home</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                            <span class="dropdown-toggle text-dark">HealthCare</span>
+                        </a>
+                        <div class="dropdown-menu m-0">
+                            <a href="medical-equip.html" class="dropdown-item">Medical Equipment</a>
+                            <a href="screening.html" class="dropdown-item">Screening Devices</a>
+                            <a href="infrastructure.html" class="dropdown-item">Hospital Infrastructure</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                            <span class="dropdown-toggle text-dark">Waste Management</span>
+                        </a>
+                        <div class="dropdown-menu m-0">
+
+                            <a href="stp.html" class="dropdown-item">Bio-medical Waste Management </a>
+
+                            <a href="waste-manag.html" class="dropdown-item">Solid Waste Management</a>
+                            <a href="biomedical.html" class="dropdown-item"> Waste Water Management</a>
+
+                                      
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                            <span class="dropdown-toggle text-dark">Start-Up Projects</span>
+                        </a>
+                        <div class="dropdown-menu m-0">
+                            <a href="start-up.html" class="dropdown-item">Start-Up Health Group Projects</a>
+                            <a href="drone.html" class="dropdown-item">Agricultural Drone</a>
+                            <a href="pallets.html" class="dropdown-item">Automation in Pharmacy</a>
+                        </div>
+                    </div>
+                    <a href="inspiration.html" class="nav-item nav-link text-dark">Our Inspiration</a>
+                    <a href="contact.html" class="nav-item nav-link text-dark">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <script>
+        window.onscroll = function () {
+            var logo = document.getElementById("logo");
+            if (window.scrollY > 40) {
+                logo.classList.add("logo-small");
+            } else {
+                logo.classList.remove("logo-small");
+            }
+        };
+    </script>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="appointmentModalLabel">Request Call</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="appointmentForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="text" class="form-control" id="phone" placeholder="Your Phone Number">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h1 class="text-white display-3 mb-4 wow fadeInDown surroundscop_h1" data-wow-delay="0.1s">PLASMA AIR
+                STERILIZER</h1>
+            <ol class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+                <li class="breadcrumb-item"><a href="medical-equip.html" class="text-white">Medical Equipments</a>
+                </li>
+                <li class="breadcrumb-item active text-secondary">Plasma Air Sterilizer</li>
+            </ol>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Product-Slide Show -->
+    <section class="testimonial-section  new-background-color">
+    <section class="testimonial-section  new-background-color">
+        <div class="container">
+            <h1 class="testimonial-title text-center mb-4 " style="font-size: 3.5rem; line-height: 1.2;font-weight: 700;color: #003a66;">Product Brochure</h1>
+             
+            <h1 class="testimonial-title text-center mb-4 " style="font-size: 3.5rem; line-height: 1.2;font-weight: 700;color: #003a66;">Product Brochure</h1>
+             
+            <div class="owl-carousel testimonial-carousel">
+                <div class="testimonial-item   p-0" style="height: 70vmin !important;">
+                <div class="testimonial-item   p-0" style="height: 70vmin !important;">
+                    <div class="testimonial-image d-flex justify-content-center align-items-center">
+                        <img src="img/plasma-air-strilizer-brouchernew1.jpg" alt="Client 1 Image"
+                        <img src="img/plasma-air-strilizer-brouchernew1.jpg" alt="Client 1 Image"
+                            style="width:100%; height:100%;">
+                    </div>
+                </div>
+                <div class="testimonial-item p-0" style="height: 70vmin !important;">
+                <div class="testimonial-item p-0" style="height: 70vmin !important;">
+                    <div class="testimonial-image d-flex justify-content-center align-items-center ">
+                        <img src="img/plasma-air-strilizer-brouchernew2.jpg" alt="Client 2 Image"
+                            style="width:100%; height:100%;">
+                    </div>
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">View PDF</h5>
+                <a href="public/docs/plasma-air-strilizer-broucher1.pdf" target="_blank"
+                    class="btn btn-primary">Download PDF</a>
+            </div>
+        </div>
+    </section>
+    <!-- Product-Slide Show -->
+
+    <script>
+        $(document).ready(function () {
+            $(".testimonial-carousel").owlCarousel({
+                items: 1,
+                loop: true,
+                margin: 30,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                nav: true,
+                navText: [
+                    '<i class="fas fa-chevron-left"></i>',
+                    '<i class="fas fa-chevron-right"></i>'
+                ],
+                dots: false,
+                animateIn: 'zoomIn',
+                animateOut: 'zoomOut'
+            });
+        });
+    </script>
+
+   
+
+   
+    <!-- Video Start -->
+    <div class="container-fluid contact overflow-hidden py-5 new-background-color"
+    style="position: relative; overflow: hidden;">
+    <!-- Background Blur -->
+    <div style="
+    background: url('public/bg-2.png.jpg') no-repeat center center / cover;
+    filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;">
+    </div>
+
+    <!-- Content Section -->
+    <div class="container-fluid py-5" style="position: relative; z-index: 1;">
+        <div class="row mb-5">
+            <!-- Video Section -->
+            <div class="col-lg-5 col-md-5 mb-4 wow fadeInLeft justify-content-center" data-wow-delay="0.1s">
+                 
+                    
+                    <div class="video-cards m-0" style="z-index: 1;position: relative;">
+                        
+            
+                        <!-- Video Card 1 -->
+                        <iframe class="wow fadeInUp" width="550" height="350" src="https://www.youtube.com/embed/mI8hiWfvV7E?si=RGy4O5nWV-x8h7he"
+                            style="border-radius: 20px;" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                
+            </div>
+
+            <!-- Text Section -->
+            <div class="col-lg-7 col-md-7 wow fadeInRight" data-wow-delay="0.3s">
+                <h1 class="display-5 mb-4">Plasma Air Sterilizer</h1>
+                <p class="mb-3">
+                    <label class="fw-bold">Highlight Of Product:</label>
+                    Plasma Air Sterilizer utilizes advanced plasma technology to eliminate harmful microorganisms
+                    and pathogens in the air, providing a safer and healthier environment. With its highly effective
+                    sterilization process, it ensures continuous air purification in various settings.
+
+
+                </p>
+                <p class="mb-3">
+                    <label class="fw-bold">Application Benefits:</label>
+                    The Plasma Air Sterilizer uses advanced plasma technology to eliminate harmful pathogens from
+                    the air, ensuring continuous air purification. It provides 24/7 sterilization, improving indoor
+                    air quality while being energy-efficient and cost-effective.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+     
+
+
+
+    <!-- Dr. video Start -->
+    <div class="container-fluid contact overflow-hidden py-5 my-5 new-background-color"
+    style="background: url(public/assets/img/stethoscope.jpg); background-size: cover; background-attachment: initial; overflow: hidden; background-repeat: no-repeat;">
+    <div class="container-fluid py-5">
+        <div class="row mb-5">
+            <!-- Video Section -->
+
+            <!-- Text Section -->
+            <div class="col-lg-7 col-md-7 wow fadeInRight" data-wow-delay="0.3s">
+                <div class="sub-style">
+                    <h1 class="display-5 mb-4">Plasma Air Sterilizer</h1>
+                    <h5 class="text-primary pe-3" style="font-weight: 600;">Feature Benefit</h5>
+                </div>
+                <p class="mb-3">Revolutionary plasma air sterilization technology eliminates 99.9% of airborne
+                    pathogens, ensuring cleaner, safer environments for patients and staff, and significantly
+                    reducing the risk of hospital-acquired infections.
+                    <a class="text-primary fw-bold" href="public/docs/plasma-air-strilizer-broucher1.pdf">Download Now</a>.
+                </p>
+                <p class="mb-3">
+                    <label class="fw-bold">Plasma Air Sterilizer is Designed For:</label>
+                    Better air quality, improved patient safety, and enhanced caregiver confidence.
+                </p>
+                <p class="mb-3">
+                    <label class="fw-bold">Plasma Air Sterilizer is Unique and World’s First with:</label>
+                    Advanced plasma ion technology that actively neutralizes bacteria, viruses, and odors in
+                    real-time. Equipped with a multi-layer filtration system and silent operation, it guarantees
+                    continuous, efficient air sterilization without disrupting workflows.
+                </p>
+            </div>
+            
+            <div class="col-lg-5 col-md-5 mb-4 wow fadeInLeft justify-content-center " data-wow-delay="0.1s">
+                
+                    <div class="video-cards m-0" style="z-index: 1;position: relative;">
+                        
+            
+                        <!-- Video Card 1 -->
+                        <iframe class="wow fadeInUp" width="550" height="350" src="https://www.youtube.com/embed/PUpoLH4EPhM?si=hdKJZkbnf4J4i7_e"
+                            style="border-radius: 20px;" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Dr. video End -->
+
+
+    <!-- product info start-->
+    <section class="section-info" style="background-color: #e2e2e9;">
+        <!-- Left Content -->
+         <div class="row">
+            <div class="section-info-content col-lg-6 ">
+                <h1 class="display-5 my-3">INNOVATION <span class="ms-2"><i class="fa-regular fa-lightbulb"></i></span></h1>
+                <p>
+                    Combining multi-stage air purification, advanced sensors, and Cold Plasma technology, <strong>VIROGUARD™ SEMICONDUCTOR AIR STERILIZER&trade;</strong> delivers medical-grade air sanitization, ensuring healthier indoor environments.
+                </p>
+                <!-- Badges -->
+                <div class="badge-container my-4">
+                    <div class="badge">
+                        <p style="font-size: calc(0.7rem + 1vw) !important; color: #2c3e8c;">99%</p>
+                        <p>Dust & Particle </p>
+                        <p>Removal</p>
+                        
+                    </div>
+                    
+                    <div class="badge ">
+                        <p style="font-size: calc(0.7rem + 1vw) !important; color: #2c3e8c;">7</p>
+                        <p>Stages of </p>
+                        <p>Purification</p>
+                    </div>
+                </div>
+                <!-- Features -->
+                <div class="features my-4">
+                    <div class="feature">99% Dust Particle Removal</div>
+                    <div class="feature">Cold Plasma Technology</div>
+                    <div class="feature">UVGI Lamp for Virus Elimination</div>
+                    <div class="feature">Advanced Air Sensors</div>
+                     
+                </div>
+            </div>
+            <div class="image-container col-12 col-lg-6" >
+                <img src="img/plasma-air-strilizer-brouchernew2-removebg-preview.png" alt="Surroundscope Image" style="border-radius: 40px;">
+            </div>
+         </div>
+     
+        
+        <!-- Right Image -->
+    
+    </section>
+     <!-- product info end -->
+
+</body>
+   
+
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="mid-continer m-auto py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3 ">
+                    <div class="footer-item d-flex flex-column mb-4">
+                        <h4 class="text-secondary mb-4">Headquarters</h4>
+                        <a href=""><i class="fa fa-map-marker-alt me-2"></i> Block, 35, Below Balasaheab Thackeray
+                            Flyover, Near Habibia Masjid, Mumbai 400102</a>
+                        <a href=""><i class="fas fa-envelope me-2"></i> service@unisol.org.in</a>
+                        <a href=""><i class="fas fa-phone me-2"></i> +91 932 531 2125</a>
+                    </div>
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-secondary mb-4">Regional office</h4>
+                        <a href=""><i class="fa fa-map-marker-alt me-2"></i> F. No 2, Prince Complex,
+                            Chatrapati Nagar Chock, Nagpur, Maharashtra 440015</a>
+                        <a href=""><i class="fas fa-envelope me-2"></i>enquiry@unisol.org.in</a>
+                        <a href=""><i class="fas fa-phone me-2"></i> +91 749 901 3846 </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-secondary mb-4">Our Services</h4>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink"
+                                aria-expanded="false">
+                                <i class="fas fa-angle-right me-2"></i>
+                                HealthCare
+                            </a>
+                            <ul class="dropdown-menu bg-dark" style="margin-left: 140px;"
+                                aria-labelledby="dropdownMenuLink">
+                                <li> <a href="medical-equip.html" class="dropdown-item">Medical Equipment</a></li>
+                                <li><a href="screening.html" class="dropdown-item">Screening Devices</a></li>
+                                <li><a href="infrastructure.html" class="dropdown-item">Hospital Infrastructure</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink"
+                                aria-expanded="false">
+                                <i class="fas fa-angle-right me-2"></i>
+                                Waste Management
+                            </a>
+                            <ul class="dropdown-menu bg-dark" style="margin-left: 140px;"
+                                aria-labelledby="dropdownMenuLink">
+                                <li><a href="waste-manag.html" class="dropdown-item">Solid Waste Management</a></li>
+                                <li><a href="biomedical.html" class="dropdown-item">Biomedical Waste Management</a></li>
+                                <li><a href="stp.html" class="dropdown-item">Sewage Treatment Plant</a></li>
+                                <li><a href="etp.html" class="dropdown-item">Effluent Treatment Plant</a></li>
+                                <li><a href="waste-water-manage.html" class="dropdown-item">Kitchen Waste Management</a>
+                                </li>
+                                <li><a href="clean-safe.html" class="dropdown-item">Clean Safe Water</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink"
+                                aria-expanded="false">
+                                <i class="fas fa-angle-right me-2"></i>
+                                Start-Up Projects
+                            </a>
+                            <ul class="dropdown-menu bg-dark" style="margin-left: 140px;"
+                                aria-labelledby="dropdownMenuLink">
+                                <li><a href="drone.html" class="dropdown-item">Agricultural Drone</a></li>
+                                <li><a href="pallets.html" class="dropdown-item">Automation in Pharmacy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-2">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-secondary mb-4">Privacy Policy</h4>
+                        <div class="mb-1">
+                            <a href="404.html" class=""><i class="fas fa-angle-right me-2"></i> Terms Of Use</a>
+                        </div>
+                        <div class="mb-3">
+                            <a href="contact.html" class=""><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-4">
+                    <h4 class="text-secondary mb-4">Contact Us</h4>
+                    <div class="col-lg-12 wow fadeInRight" data-wow-delay="0.3">
+
+                        <!-- <p class="mb-3">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a class="text-primary fw-bold" href="https://htmlcodex.com/contact-form">Download Now</a>.</p> -->
+                        <form action="#">
+                            <input type="hidden" name="access_key" value="3582cb02-f89e-44e7-9e8a-8e4cd2ac7619">
+                            <div class="row g-4">
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="text" name="name" class="form-control" id="name"
+                                            placeholder="Your Name">
+                                        <label for="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="email" name="email" class="form-control" id="email"
+                                            placeholder="Your Email">
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="phone" name="phone" class="form-control" id="phone"
+                                            placeholder="Phone">
+                                        <label for="phone">Your Phone</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6 ">
+                                    <div class="mb-3 bg-white rounded ">
+
+                                        <div class="dropdown " style="padding: 10px 0px;">
+                                            <select class="form-select border-0 bg-white new-muted" name="service"
+                                                id="dropdownMenuButton" aria-expanded="false">
+                                                <option value="" disabled selected>Select Services</option>
+                                                <option value="health-care">Health Care</option>
+                                                <option value="waste-management">Waste Management</option>
+                                                <option value="start-up-projects">Start-Up Projects</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="subject" id="subject"
+                                            placeholder="Subject">
+                                        <label for="subject">Subject</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" name="message" placeholder="Leave a message here"
+                                            id="message" style="height: 160px"></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary w-100 py-3">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-white"><a href="#" class="border-bottom text-white"><i
+                                class="fas fa-copyright text-light me-2"></i>Technokrate</a>, All right reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-white">
+                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                    Designed By <a class="border-bottom text-white" href="https://technokrate.com">Technokrate</a>
+                    Distributed By <a class="border-bottom text-white" href="https://technokrate.com">Technokrate LTD.
+                        PVT.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://kit.fontawesome.com/e872779e25.js" crossorigin="anonymous"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

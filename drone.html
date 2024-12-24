@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ignite</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <script
+      src="https://kit.fontawesome.com/df4fa444c6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+      body {
+        background-color: rgb(249, 248, 236);
+        margin: 0;
+        padding: 0;
+      }
+
+      .link-section a {
+        font-size: 1.1rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+      }
+
+      .qr-code img {
+        max-width: 200px;
+        /* Ensure the QR code doesn't get too large */
+        width: 100%;
+        /* Make it responsive */
+        height: auto;
+      }
+
+      h4 {
+        font-weight: bold;
+        color: #333;
+      }
+
+      @media (max-width: 767.98px) {
+        .text-md-start {
+          text-align: center !important;
+        }
+
+        .text-md-end {
+          text-align: center !important;
+        }
+      }
+
+      .logo-large {
+        width: 285px;
+        height: 65px;
+        transition: width 0.3s ease-in-out;
+      }
+
+      .logo-small {
+        width: 100%;
+        height: 40px;
+      }
+
+      /* .w-full { width: 100%; }
+            .h-full { height: 100%; } */
+
+      /* video */
+
+      .relative {
+        position: relative;
+        height: 118vh;
+        width: 100vw;
+        overflow: hidden;
+      }
+
+      .relative video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: blur(2px);
+      }
+
+      .relative .absolute {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .relative h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        color: white;
+      }
+
+      .relative p {
+        font-size: 1.25rem;
+        color: #e5e7eb;
+        max-width: 700px;
+        margin-top: 1rem;
+      }
+
+      .brochure {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        height: 30vh;
+      }
+
+      /* Styling the heading */
+      .brochure h2 {
+        font-size: 29px;
+        margin-right: 30px;
+        transition: transform 0.3s ease, color 0.3s ease;
+        /* Smooth transition */
+      }
+
+      .brochure h2:hover {
+        transform: scale(1.2);
+        /* Increases the size of the text by 20% */
+        color: #138496;
+        /* Optional: Changes the color on hover */
+      }
+
+      /* Styling the download buttons */
+      .brochure a {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #4caf50;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin: 5px 0;
+        /* Adds space between the buttons */
+      }
+
+      /* Hover effect for buttons */
+      .brochure a:hover {
+        background-color: #138496;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .brochure a:focus {
+        outline: none;
+        border: 2px solid #45a049;
+      }
+
+      /* Styling the Image Card hover effects */
+      .gallery-img-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .gallery-img-card:hover {
+        transform: translateY(-10px);
+        /* Moves the card up */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        /* Adds shadow on hover */
+      }
+
+      .video-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          background-color 0.3s ease;
+        height: 570px;
+        /* Increase the total card height */
+      }
+
+      .video-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+        /* background-color: #eaf7e2;  */
+      }
+
+      .video-card video {
+        width: 100%;
+        height: 280px;
+        /* You can adjust this height as needed */
+        object-fit: cover;
+        /* Makes sure the video fits inside the container */
+        border-radius: 10px 10px 0 0;
+        /* Rounded corners on top only */
+      }
+
+      /* Make the video container responsive */
+      .video-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .video-content {
+        padding: 15px;
+        background-color: #ffffff;
+        border-radius: 0 0 10px 10px;
+        text-align: center;
+        height: 600px;
+      }
+
+      .video-content h3 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 8px;
+      }
+
+      .video-content p {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 0;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .col-md-4 {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
+
+      .media-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 380px;
+        /* Height of image and video card */
+      }
+
+      .media-card img,
+      .media-card video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Ensures the image/video covers the full card */
+        border-radius: 10px;
+      }
+
+      .media-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .media-content {
+        padding: 10px;
+        text-align: center;
+      }
+
+      .media-content h3 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 8px;
+      }
+
+      .media-content p {
+        font-size: 14px;
+        color: #555;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .col-md-4 {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
+
+      .documents {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        height: 30vh;
+      }
+
+      /* Styling the heading */
+      .documents h2 {
+        font-size: 29px;
+        margin-right: 30px;
+        transition: transform 0.3s ease, color 0.3s ease;
+        /* Smooth transition */
+      }
+
+      .documents h2:hover {
+        transform: scale(1.2);
+        /* Increases the size of the text by 20% */
+        /* color: #007bff; */
+        color: #138496;
+        /* Optional: Changes the color on hover */
+      }
+
+      /* Styling the download buttons */
+      .documents a {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #4caf50;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin: 5px 0;
+        /* Adds space between the buttons */
+      }
+
+      /* Hover effect for buttons */
+      .documents a:hover {
+        background-color: #138496;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .documents a:focus {
+        outline: none;
+        border: 2px solid #45a049;
+      }
+
+      h1.text-center.mb-5 {
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      h1.text-center.mb-5:hover {
+        color: black;
+        /* Change text color (blue) */
+        transform: scale(1.1);
+        /* Scale the text to 110% */
+      }
+
+      /* Set up flex layout for the step container */
+      .step-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* Ensures equal gap between items */
+      }
+
+      .step-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f8f9fa; /* Optional: Light background for visibility */
+        padding: 20px; /* Space inside the box */
+        border: 1px solid #e0e0e0; /* Border to see the dimensions of the box */
+        border-radius: 8px; /* Slight border radius */
+        height: 100%; /* Full height of parent flex item */
+      }
+
+      .step-container .step-box {
+        min-height: 250px; /* All boxes will have the same height */
+      }
+
+      .row .col-md-2.step-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+      }
+
+      .row .col-md-2 {
+        display: flex;
+        justify-content: center;
+      }
+
+      .arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .arrow-icon img {
+        width: 40px;
+        height: auto;
+      }
+
+      /* Add equal gap between all step-boxes */
+      .step-container > .col-md-2,
+      .step-container > .col-md-1 {
+        margin-bottom: 20px;
+      }
+
+      .step-box img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .step-box p {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 768px) {
+        .col-md-2,
+        .col-md-1 {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+
+        .step-box {
+          min-height: auto;
+        }
+
+        .arrow-icon img {
+          width: 20px;
+        }
+      }
+      .footer {
+        padding: 70px;
+      }
+      /* Blurred background image */
+      .blurred-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("img/Agri-drone-img.jpg") no-repeat center center/cover; /* Change image path if needed */
+        filter: blur(1px); /* Adjust the blur level */
+        z-index: -1; /* Ensures background stays behind content */
+        opacity: 0.9; /* Adjust transparency of background image */
+      }
+
+      /* Content container */
+      .content-container {
+        position: relative;
+        z-index: 1; /* Ensures content appears above the blurred background */
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 100vw; /* Full width of the screen */
+        padding: 20px 0; /* Adds padding on top and bottom */
+      }
+
+      /* Image in the right column */
+      .highlight-img {
+        border-radius: 10px; /* Rounds the image corners */
+      }
+      /* Container Section */
+
+      .bg-white {
+        background-color: white !important;
+      }
+
+      /* Custom Blurred Background Image */
+      .custom-blurred-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("img/Agri-drone-img.jpg") no-repeat center center/cover;
+        filter: blur(1px);
+        z-index: -1;
+        opacity: 0.9; /* Optional: adjust opacity to make the background less intense */
+      }
+
+      /* Content over the blurred background */
+      .container {
+        position: relative;
+        z-index: 1; /* Ensure the content appears above the blurred background */
+        /* background-color: rgba(255, 255, 255, 0.50);  */
+
+        width: 100vw; /* Full width of the screen */
+        padding: 20px 0;
+      }
+
+      /* Gallery Card Styling */
+      .gallery-img-card {
+        border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .gallery-img {
+        border-radius: 10px;
+      }
+
+      /* Ensure the list items have no extra padding */
+      .list-group-item {
+        background: transparent;
+        border: none;
+      }
+
+      /* Styling for the section title */
+      h1 {
+        color: #333;
+      }
+
+      /* Custom style for smaller image cards */
+      .gallery-img-card img {
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-secondary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div
+      class="container-fluid px-5 d-none d-lg-block"
+      style="background-color: rgb(255, 254, 245)"
+    >
+      <div class="row gx-0 align-items-center">
+        <div class="col-lg-5 text-center text-lg-start mb-lg-0">
+          <div class="d-flex">
+            <a href="#" class="text-dark me-4"
+              ><i class="fas fa-envelope text-secondary me-2"></i
+              >service@unisol.org.in</a
+            >
+            <a href="tel:+919325312125" class="text-dark me-0"
+              ><i class="fas fa-phone-alt text-secondary me-2"></i>+91 932 531
+              2125</a
+            >
+          </div>
+        </div>
+        <div class="col-lg-4 text-center text-lg-end">
+          <div class="d-inline-flex align-items-center" style="height: 45px">
+            <a href="#" class="text-dark me-2"> Help</a><small> / </small>
+            <a href="#" class="text-dark mx-2"> Support</a><small> / </small>
+            <a href="#" class="text-dark ms-2"> Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Topbar End -->
+
+    <div class="container-fluid nav-bar p-0">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-primary px-3 py-2 bg-white"
+      >
+        <a href="index.html" class="navbar-brand d-flex align-items-center">
+          <img
+            src="img\Enviro Solutions Logo 2 SVG.svg"
+            id="logo"
+            class="img-fluid logo-large me-2"
+            alt="UniSol Logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars text-white"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto">
+            <a href="index.html" class="nav-item nav-link active text-dark"
+              >Home</a
+            >
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                <span class="dropdown-toggle text-dark">HealthCare</span>
+              </a>
+              <div class="dropdown-menu m-0">
+                <a href="medical-equip.html" class="dropdown-item"
+                  >Medical Equipment</a
+                >
+                <a href="screening.html" class="dropdown-item"
+                  >Screening Devices</a
+                >
+                <a href="infrastructure.html" class="dropdown-item"
+                  >Hospital Infrastructure</a
+                >
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                <span class="dropdown-toggle text-dark">Waste Management</span>
+              </a>
+              <div class="dropdown-menu m-0">
+                <a href="stp.html" class="dropdown-item"
+                  >Bio-medical Waste Management
+                </a>
+
+                <a href="waste-manag.html" class="dropdown-item"
+                  >Solid Waste Management</a
+                >
+                <a href="biomedical.html" class="dropdown-item">
+                  Waste Water Management</a
+                >
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                <span class="dropdown-toggle text-dark">Start-Up Projects</span>
+              </a>
+              <div class="dropdown-menu m-0">
+                <a href="start-up.html" class="dropdown-item"
+                  >Start-Up Health Group Projects</a
+                >
+                <a href="drone.html" class="dropdown-item"
+                  >Agricultural Drone</a
+                >
+                <a href="pallets.html" class="dropdown-item"
+                  >Automation in Pharmacy</a
+                >
+              </div>
+            </div>
+            <a href="inspiration.html" class="nav-item nav-link text-dark"
+              >Our Inspiration</a
+            >
+            <a href="contact.html" class="nav-item nav-link text-dark"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <script>
+      window.onscroll = function () {
+        var logo = document.getElementById("logo");
+        if (window.scrollY > 40) {
+          logo.classList.add("logo-small");
+        } else {
+          logo.classList.remove("logo-small");
+        }
+      };
+    </script>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="appointmentModal"
+      tabindex="-1"
+      aria-labelledby="appointmentModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="appointmentModalLabel">
+              Request Appointment
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="appointmentForm">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Your Name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Your Email"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phone"
+                  placeholder="Your Phone Number"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header Start -->
+
+    <div class="relative h-screen overflow-hidden" style="width: 100%">
+      <iframe
+        width="100%"
+        height="100%"
+        src="https://www.youtube.com/embed/27KEqD2AxvA?si=aHJqyVn6segwdrNX&autoplay=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <div
+        class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4"
+      ></div>
+    </div>
+
+    <!-- Header End -->
+    <div
+      class="container-fluid overflow-hidden"
+      style="position: relative; padding: 0"
+    >
+      <!-- Blurred Background Image -->
+      <div class="blurred-background"></div>
+
+      <div class="container-fluid content-container">
+        <div class="row g-0">
+          <!-- Left Column: Text Content -->
+          <div
+            class="col-lg-6 wow fadeInLeft ps-2"
+            data-wow-delay="0.2s"
+            style="font-size: 1.55rem"
+          >
+            <h1 style="text-align: center; margin-top: 50px">
+              <b>What We Do</b>
+            </h1>
+            <br /><br />
+            <p class="text-dark mb-4">
+              We, Envirosolution are a proud authorized dealer of Iotech in
+              Maharashtra, providing a wide range of Iotech drones, parts, and
+              accessories tailored for modern farming. Our advanced products
+              empower farmers to enhance productivity with cutting-edge
+              technology.
+            </p>
+            <p class="text-dark mb-4">
+              Additionally, we offer comprehensive support for government
+              subsidy programs, ensuring our customers maximize available
+              financial assistance. From drone purchases to expert guidance on
+              government initiatives, we deliver a seamless experience.
+            </p>
+          </div>
+
+          <!-- Right Column: Image Section -->
+          <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+            <div class="position-relative">
+              <img
+                src="public/enviro/agri-2.png"
+                class="img-fluid w-100 highlight-img"
+                alt="Iotech Drone Image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Highlight End -->
+
+    <div class="brochure" style="display: flex">
+      <h2>Click here to download the Brochure</h2>
+
+      <a href="public\Brochure.pdf" download=" Brochure.pdf">
+        Download Brochure
+      </a>
+    </div>
+    <!-- Introduction Section Start -->
+
+    <div class="container-fluid py-5 position-relative">
+      <!-- New Blurred Background Image -->
+      <div class="custom-blurred-background"></div>
+
+      <div class="container-fluid py-5 position-relative z-index-1">
+        <!-- Section Title -->
+        <h1 class="text-center mb-5">Current Spray Practice</h1>
+
+        <!-- Image Gallery Start -->
+        <div class="row g-4">
+          <!-- Image Card 1 -->
+          <div class="col-md-4 wow fadeInLeft" data-wow-delay="0.1s">
+            <div class="bg-white rounded shadow-sm p-3 h-100 gallery-img-card">
+              <img
+                src="img\current-spray-2.jpg"
+                class="img-fluid w-100 rounded mb-3 gallery-img"
+                alt="Smart Imaging"
+              />
+              <ul class="list-group list-group-flush" style="font-size: 20px">
+                <li class="list-group-item bg-transparent border-0 text-dark">
+                  LABORIOUS
+                </li>
+                <li class="list-group-item bg-transparent border-0 text-dark">
+                  TIME CONSUMING
+                </li>
+                <li class="list-group-item bg-transparent border-0 text-dark">
+                  LESS EFFICIENT
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Image Card 2 -->
+          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="bg-white rounded shadow-sm p-3 h-100 gallery-img-card">
+              <img
+                src="img\current-spray-1.jpg"
+                class="img-fluid w-100 rounded mb-3 gallery-img"
+                alt="Smart Visualization"
+              />
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item bg-transparent border-0 text-dark"
+                  style="font-size: 20px"
+                >
+                  <div style="text-align: center; font-size: 20px">
+                    OPERATOR EXPOSURE <br />
+                    (Many operators die and many get poisoned)
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Image Card 3 -->
+          <div class="col-md-4 wow fadeInRight" data-wow-delay="0.5s">
+            <div class="bg-white rounded shadow-sm p-3 h-100 gallery-img-card">
+              <img
+                src="img\current-spray-3.jpg"
+                class="img-fluid w-100 rounded mb-3 gallery-img"
+                alt="Smart Surgical System"
+              />
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item bg-transparent border-0 text-dark"
+                  style="font-size: 19px"
+                >
+                  <div style="text-align: center; font-size: 20px">
+                    REQUIRES LOT OF WATER
+                  </div>
+
+                  Conventional spray needs minimum 150L of good water per acre.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+
+    <div class="container-fluid py-5">
+      <h1 class="text-center mb-5">Testimonials</h1>
+
+      <div class="container-fluid">
+        <div class="row g-4">
+          <!-- Video 1 -->
+          <div class="col-md-4">
+            <div class="video-card">
+              <!-- <video controls>
+                  <source src="public\assets\video\Testimonals1.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video> -->
+              <iframe
+                width="560"
+                height="315"
+                src="https://youtube.com/embed/V7jBjzWQboc?si=giGxSan_iyeq_NR7"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+
+              <div class="video-content">
+                <h2>How it works!</h2>
+                <p style="font-size: 24px">
+                  Agricultural drones play a crucial role in modern farming by
+                  leveraging advanced technology to improve efficiency and
+                  productivity
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="col-md-4">
+            <div class="video-card">
+              <!-- <video controls>
+                  <source src="public\assets\video\Testimonals2.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video> -->
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/PiSnRbqQyk8?si=ppOgzODbQdI_OzTF"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+              <div class="video-content">
+                <h2>Features of drone</h2>
+                <p style="font-size: 24px">
+                  Drones are revolutionizing agriculture by offering innovative
+                  and efficient solutions for farm management
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 3 -->
+          <div class="col-md-4">
+            <div class="video-card">
+              <!-- <video controls>
+                  <source src="public\assets\video\Testimonals3.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video> -->
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/cpLq3TENHr8?si=sTBdM2PKpCPUyUGe"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+              <div class="video-content">
+                <h2>Training for Farmers</h2>
+                <p style="font-size: 24px">
+                  At enviro solutions, we believe in empowering farmers with the
+                  latest technology to enhance productivity and sustainability.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 4 -->
+          <div class="col-md-4">
+            <div class="video-card">
+              <!-- <video controls>
+                  <source src="public\assets\video\Testimonals4.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video> -->
+              <iframe
+                width="560"
+                height="280"
+                src="https://www.youtube.com/embed/nwxNOZh7RXs?si=1UyYCbFU-qqA3iiT"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+              <div class="video-content">
+                <h2>How Drones Enhance Agriculture</h2>
+                <p style="font-size: 24px">
+                  Drones have revolutionized agriculture by introducing
+                  precision farming techniques and providing farmers with the
+                  tools they need to monitor crops and improve yields.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 5 -->
+          <div class="col-md-4">
+            <div class="video-card">
+              <!-- <video controls>
+                  <source src="public\assets\video\Testimonals5.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video> -->
+              <iframe
+                width="560"
+                height="315"
+                src="https://youtube.com/embed/ZrvuEQ0JZKo?si=Ua6Ag35PsD9GssiC"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+              <div class="video-content">
+                <h2>Easy Integration of Drones with Bikes</h2>
+                <p style="font-size: 24px">
+                  Drones are highly portable and can be easily carried using
+                  bikes, especially in rural areas where access to farmland may
+                  be limited.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 6 -->
+          <div class="col-md-4">
+            <div class="video-card">
+              <!-- <video controls>
+                  <source src="public\assets\video\Testimonals6.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video> -->
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/crywbx4qCqE?si=lEq2W1cf9qQSfUg6"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+              <div class="video-content">
+                <h2>Customer Experience</h2>
+                <br />
+
+                <p style="font-size: 24px">
+                  Drones are revolutionizing the agricultural industry by
+                  providing farmers with advanced tools that streamline
+                  operations and improve the customer experience.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 7 -->
+          <!-- <div class="col-md-4">
+                <div class="video-card">
+                    <video controls>
+                        <source src="public\assets\video\Testimonals7.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-content">
+                        <h2>Testimonial </h2>
+                        <p style="font-size: 19px;">The integration of drones into our farming operations has completely transformed the way we work. We can monitor crop health more efficiently and with precision. This has saved us countless hours and increased our yield. A truly game-changing technology for agriculture.
+
+                        </p>
+                    </div>
+                </div>
+            </div> -->
+
+          <!-- Video 8 -->
+          <!-- <div class="col-md-4">
+                <div class="video-card">
+                    <video controls>
+                        <source src="public\assets\video\Testimonals8.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-content">
+                        <h2>Testimonial Title 8</h2>
+                        <p style="font-size: 19px;">The integration of drones into our farming operations has completely transformed the way we work. We can monitor crop health more efficiently and with precision. This has saved us countless hours and increased our yield. A truly game-changing technology for agriculture.
+
+                        </p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!--  Agrovision  -->
+
+    <div class="container-fluid py-5">
+      <h1 class="text-center mb-5">Agrovision</h1>
+
+      <!-- Row 1: Images -->
+      <div class="container-fluid">
+        <div class="row g-4">
+          <!-- Image 1 -->
+          <div class="col-md-4">
+            <div class="media-card">
+              <img src="img\Agrovision-2 (1).jpg" alt="Agrovision Image 1" />
+            </div>
+            <div class="media-content">
+              <!-- <p>Description for Image 1 goes here. It provides insight into the Agrovision process.</p> -->
+            </div>
+          </div>
+
+          <!-- Image 2 -->
+          <div class="col-md-4">
+            <div class="media-card">
+              <img src="img\Agrovision-2 (2).jpg" alt="Agrovision Image 2" />
+            </div>
+            <div class="media-content">
+              <!-- <h3>Image Title 2</h3> -->
+              <!-- <p>Description for Image 2 goes here. It explains key details of Agrovision technology.</p> -->
+            </div>
+          </div>
+
+          <!-- Image 3 -->
+          <div class="col-md-4">
+            <div class="media-card">
+              <img src="img\Agrovision-3.jpg" alt="Agrovision Image 3" />
+            </div>
+            <div class="media-content">
+              <!-- <p>This description provides information about Image 3 in the Agrovision system.</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Videos -->
+      <div class="container-fluid mt-5">
+        <div class="row g-4">
+          <!-- Video 1 -->
+          <div class="col-md-4">
+            <div class="media-card">
+              <!-- <video controls>
+                  <source src="public\assets\video\Agrovision-1-vid.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video> -->
+              <iframe
+                width="529"
+                height="377"
+                src="https://www.youtube.com/embed/lGlMmeoaGLk?si=UG5avc5TTGHnyXr0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="media-content">
+              <!-- <p>This video shows a demonstration of the Agrovision technology in action.</p> -->
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="col-md-4">
+            <div class="media-card">
+              <!-- <video controls>
+                  <source src="public\assets\video\Aggrovision-vid.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video> -->
+              <iframe
+                width="529"
+                height="377"
+                src="https://www.youtube.com/embed/8BIEFD03VC4?si=BOzowOG3eayyE9UE"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="media-content"></div>
+          </div>
+          <!-- <iframe src="https://www.youtube.com/embed/yKY3ycOmwdQ?si=RCSxan-cKe_LFpMA" style=" width: 529px; height: 375px;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe> -->
+
+          <!-- Video 3 -->
+          <div class="col-md-4">
+            <div class="media-card">
+              <!-- <video controls>
+                  <source src="public\assets\video\Agrovision-3-vid.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video> -->
+              <iframe
+                width="529"
+                height="377"
+                src="https://www.youtube.com/embed/JUxPlVm2uxM?si=o4Pzg_RXwoRw_FzN"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="media-content">
+              <!-- <p>Learn about the benefits of Agrovision through this educational video.</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Gallery End -->
+
+    <!-- Features List Start -->
+    <!-- <div class="row g-5 mt-5">
+          <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item bg-transparent border-0">
+                <i class="fa-solid fa-check-circle text-success me-2"></i>
+                SMALL LAND HOLDING – DIFFICULT TO USE BIG EQUIPMENTS
+              </li>
+              <li class="list-group-item bg-transparent border-0">
+                <i class="fa-solid fa-check-circle text-success me-2"></i>
+                INDIA HAS VARIABLE, COMPLEX TERRAIN
+              </li>
+              <li class="list-group-item bg-transparent border-0">
+                <i class="fa-solid fa-check-circle text-success me-2"></i>
+                NO SCIENTIFIC AND CONTROLLED TECHNOLOGY FOR SPRAYING APPLICATION
+              </li>
+            </ul>
+          </div>
+        </div> -->
+    <!-- Features List End -->
+    <!-- </div>
+    </div> -->
+    <!-- Introduction Section End -->
+
+    <!-- drone -->
+    <!-- <div class="container-fluid py-5">
+      <div class="container py-5">
+        <div
+          class="section-title text-center mb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+        >
+          <div class="sub-style">
+            <h5 class="sub-title text-primary px-3">
+              Drone vs Traditional Spray
+            </h5>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row wow fadeInUp" data-wow-delay="0.1">
+            <div class="bg-light rounded p-3">
+              <img
+                src="public/enviro/a-4.png"
+                class="img-fluid w-100 rounded"
+                style="margin-bottom: 15px"
+                alt="Image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- drone -->
+
+    <!-- Testimonial Start -->
+    <!-- <div
+      class="container-fluid overflow-hidden pb-5"
+      style="background: #f7f7f7"
+    >
+      <div class="container py-5"> -->
+    <!-- <div
+          class="section-title text-center mb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+        >
+          <div class="sub-style">
+            <h5 class="sub-title text-primary px-3">
+              Drone vs Traditional Spray
+            </h5>
+          </div>
+        </div> -->
+    <!-- Testimonial Content Start -->
+    <!-- <div class="row g-5"> -->
+    <!-- Left Column -->
+    <!-- <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+            <h5 class="fw-bold text-dark mb-4">
+              Keeping doctors and nurses safe while providing effective
+              teleconsultation
+            </h5>
+            <ul class="list-group list-group-flush">
+              <li
+                class="list-group-item bg-transparent border-0 d-flex align-items-start"
+              >
+                <div>
+                  <span class="fw-bold"
+                    >Difficulty faced in spraying PPC on Tall crops like
+                    Sugarcane, Wetland crops like Paddy.</span
+                  >
+                </div>
+              </li>
+              <li
+                class="list-group-item bg-transparent border-0 d-flex align-items-start"
+              >
+                <div>
+                  <span class="fw-bold"
+                    >Difficulty faced in crops on which there are regular sprays
+                    required like Chilli, other vegetables & Fruits.</span
+                  >
+                </div>
+              </li>
+              <li
+                class="list-group-item bg-transparent border-0 d-flex align-items-start"
+              >
+                <div>
+                  <span class="fw-bold"
+                    >Labour Shortage:- Farmers can take service or can spray
+                    them self also.</span
+                  >
+                </div>
+              </li>
+            </ul>
+          </div> -->
+    <!-- Right Column -->
+    <!-- <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+            <div class="position-relative">
+              <img
+                src="public/enviro/a-5.png"
+                class="img-fluid w-100 rounded shadow-sm"
+                alt="Dozee Image"
+              />
+            </div>
+          </div>
+        </div> -->
+    <!-- Testimonial Content End -->
+    <!-- </div>
+    </div> -->
+    <!-- Testimonial End -->
+
+    <!-- AIF Stakeholders Section End -->
+
+    <!-- AIF Portal Process Section -->
+    <div class="container-fluid py-5" style="background-color: #f8f9fa">
+      <div class="container py-5">
+        <!-- Section Title -->
+        <div
+          class="section-title text-center wow fadeInUp"
+          data-wow-delay="0.1s"
+          style="margin-bottom: 70px"
+        >
+          <h1 class="display-5 mb-4">
+            AIF Portal - Simple Online Application Process Setup for the Scheme
+          </h1>
+          <a
+            class="mb-0 btn btn-primary"
+            href="https://agriinfra.dac.gov.in/"
+            target="_blank"
+            >Visit AIF Platform</a
+          >
+        </div>
+
+        <!-- Process Duration -->
+        <div class="text-center mb-5">
+          <span class="process-duration">Max 60 days</span>
+        </div>
+
+        <!-- Step-by-Step Process -->
+        <div class="row step-container text-center">
+          <!-- Step 1 -->
+          <div class="col-md-2 step-box">
+            <img
+              src="public/enviro/b-1.png"
+              alt="Step 1 Image"
+              class="img-fluid mb-3"
+            />
+            <p>
+              Applicant registers on the online portal, fills application, and
+              submits DPR
+            </p>
+          </div>
+
+          <div class="col-md-1 arrow">
+            <div class="arrow-icon">
+              <img src="public/enviro/arrow.png" alt="" />
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="col-md-2 step-box">
+            <img
+              src="public/enviro/b-2.png"
+              alt="Step 2 Image"
+              class="img-fluid mb-3"
+            />
+            <p>
+              AIF team verifies application and transfers to the bank branch for
+              appraisal
+            </p>
+          </div>
+
+          <div class="col-md-1 arrow">
+            <div class="arrow-icon">
+              <img src="public/enviro/arrow.png" alt="" />
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="col-md-2 step-box">
+            <img
+              src="public/enviro/b-3.png"
+              alt="Step 3 Image"
+              class="img-fluid mb-3"
+            />
+            <p>
+              Bank regularly checks AIF portal / coordinates with nodal officer
+              to access submitted applications
+            </p>
+          </div>
+
+          <div class="col-md-1 arrow">
+            <div class="arrow-icon">
+              <img src="public/enviro/arrow.png" alt="" />
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="col-md-2 step-box">
+            <img
+              src="public/enviro/b-4.png"
+              alt="Step 4 Image"
+              class="img-fluid mb-3"
+            />
+            <p>
+              Application verified by bank & sanctioned; disbursements as per
+              schedule
+            </p>
+          </div>
+
+          <div class="col-md-1 arrow">
+            <div class="arrow-icon">
+              <img src="public/enviro/arrow.png" alt="" />
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="col-md-2 step-box">
+            <img
+              src="public/enviro/b-5.png"
+              alt="Step 5 Image"
+              class="img-fluid mb-3"
+            />
+            <p>
+              Bank submits claim to MoA on a quarterly basis for interest
+              subvention & credit guarantee fee
+            </p>
+          </div>
+
+          <div class="col-md-1 arrow">
+            <div class="arrow-icon">
+              <img src="public/enviro/arrow.png" alt="" />
+            </div>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="col-md-2 step-box">
+            <img
+              src="public/enviro/b-6.png"
+              alt="Step 6 Image"
+              class="img-fluid mb-3"
+            />
+            <p>
+              GOI transfers interest subvention & credit guarantee fee to banks
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- download documents -->
+
+    <div class="documents" style="display: flex">
+      <h2>Required Documents</h2>
+
+      <a href="public\Envirosolution-req-doc-1.pdf" download=" Document.pdf">
+        Download Documents
+      </a>
+    </div>
+
+    <!-- Container for the section -->
+    <!-- <div class="container-fluid py-5">
+      <div class="container py-5">
+        <div class="row g-4 mb-5">
+          <div class="col-lg-6">
+            <div class="custom-card p-4 text-center rounded bg-light shadow-sm">
+              <img
+                src="public/enviro/enviro.png"
+                class="custom-icon img-fluid mb-3"
+                alt="Services Icon"
+              />
+            </div>
+            <div class="custom-card p-4 text-center rounded bg-light shadow-sm">
+              <h3 class="custom-title">Existing Loan Details (If Any)</h3>
+            </div>
+            <div class="custom-card p-4 bg-white rounded shadow-sm">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  Types of Facility - Cash Credit, Term Loan, and Others
+                </li>
+                <li class="list-group-item">Name of Bank and Branch</li>
+                <li class="list-group-item">Limits</li>
+                <li class="list-group-item">Rate of Interest</li>
+                <li class="list-group-item">Repayment Terms</li>
+                <li class="list-group-item">Purpose</li>
+              </ul>
+            </div>
+          </div> -->
+
+    <!-- Credentials List -->
+    <!-- <div class="col-lg-6">
+            <h3 class="custom-title">
+              Required Credentials for Data Verifications & DPR
+            </h3>
+            <div class="custom-card p-4 bg-white rounded shadow-sm">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Aadhar Card of 3 Directors</li>
+                <li class="list-group-item">PAN Card of 3 Directors</li>
+                <li class="list-group-item">PAN Number of Company</li>
+                <li class="list-group-item">
+                  Registration Number of Applicant/CIN
+                </li>
+                <li class="list-group-item">
+                  Date of Establishment/Incorporation
+                </li>
+                <li class="list-group-item">
+                  Address of the Registered Office
+                </li>
+                <li class="list-group-item">Address of 3 Directors</li>
+                <li class="list-group-item">Contact Number of 3 Directors</li>
+                <li class="list-group-item">Email ID of 3 Directors</li>
+                <li class="list-group-item">
+                  Academic & Technical Qualifications of 3 Directors
+                </li>
+                <li class="list-group-item">DIN Number of 3 Directors</li>
+                <li class="list-group-item">Shareholding of 3 Directors</li>
+                <li class="list-group-item">
+                  Cancelled Bank Check/Photocopy of the Passbook of Lending Bank
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Container for the section -->
+    <!-- <div class="container-fluid py-5" style="background-color: #f8f9fa">
+      <div class="container py-5">
+        <div class="table-container">
+          <h2 class="title text-center mb-4">Detailing of Proposal</h2>
+          <p class="text-center mb-5">For Understanding Only</p>
+
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Sr</th>
+                  <th scope="col">Topic</th>
+                  <th scope="col">Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td class="topic">Nano Fertiliser</td>
+                  <td>
+                    Urea and DAP are now coming in NANO form. Urea- Granular
+                    dose per acre was 45kg, DAP was 27kg. Now in Nano-Urea and
+                    Nano-DAP dose is 500ml per acre. Best results of Nano-Urea
+                    and Nano-DAP are observed by drone only.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td class="topic">Chemicals – ULV</td>
+                  <td>
+                    In India, it is observed that pests are building immunity
+                    against Generic molecules of insecticides. New formulations
+                    are required to control immune pests. These new formulations
+                    are now coming in ULV (Ultra-low volume form). Dose of ULV
+                    per acre would be as low as 50ml. In this case also, as
+                    drone sprays are very fine, the efficacy of ULV is observed
+                    best with drones. Most of the new chemicals being registered
+                    in India are ULVs and companies like Syngenta, Bayer are
+                    taking it with Drone as spraying method on “LABEL”.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td class="topic">Finance</td>
+                  <td>
+                    Most affordable and safe loan in India. No security
+                    required.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td class="topic">Govt Push</td>
+                  <td>
+                    Government is launching many schemes to promote drones.
+                    Reasons are simple:
+                    <ul>
+                      <li>
+                        When consumption of Nano-Urea and Nano-DAP increases,
+                        then Govt will save huge money, which is going in
+                        subsidy provided on UREA (about 2 lakh crore per year).
+                      </li>
+                      <li>
+                        Soil protection can be ensured with drones as dose and
+                        spray are controlled scientifically.
+                      </li>
+                      <li>
+                        As spray volume is controlled, so residue of chemical on
+                        crops is within permissible limits. This saves the
+                        health of consumers.
+                      </li>
+                      <li>
+                        With the implementation of drones, there will be 90%
+                        savings in water being used for spray applications.
+                      </li>
+                      <li>
+                        With advanced drone-based farm mechanization, farmers'
+                        resources will be saved and output, yield will increase.
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="container-fluid py-5" style="background-color: #f8f9fa">
+      <div class="container py-5">
+        <div class="row align-items-center">
+          <!-- Left Column: Library Information -->
+          <div class="col-md-6 text-md-start text-center mb-4 mb-md-0">
+            <h1>Library</h1>
+            <p class="lead">Link for videos and Photographs:</p>
+            <div class="link-section">
+              <a
+                href="https://drive.google.com/drive/folders/1JX-cC51kcY6eZHf1DuyzoJxcd5DzYJfD?usp=sharing"
+                target="_blank"
+                class="btn"
+                style="background-color: #4caf50; color: white"
+                >Open Google Drive Folder</a
+              >
+            </div>
+          </div>
+
+          <!-- Right Column: QR Code -->
+          <div class="col-md-6 text-md-end text-center">
+            <div class="qr-code">
+              <img
+                src="public/enviro/qr.png"
+                class="img-fluid rounded"
+                alt="QR Code"
+              />
+            </div>
+            <h4 class="mt-3">QR Code For Videos & Photographs</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+      <div class="mid-continer m-auto py-5">
+        <div class="row g-5">
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="footer-item d-flex flex-column mb-4">
+              <h4 class="text-secondary mb-4">Headquarters</h4>
+              <a href=""
+                ><i class="fa fa-map-marker-alt me-2"></i> Block, 35, Below
+                Balasaheab Thackeray Flyover, Near Habibia Masjid, Mumbai
+                400102</a
+              >
+              <a href=""
+                ><i class="fas fa-envelope me-2"></i> service@unisol.org.in</a
+              >
+              <a href=""><i class="fas fa-phone me-2"></i> +91 932 531 2125</a>
+            </div>
+            <div class="footer-item d-flex flex-column">
+              <h4 class="text-secondary mb-4">Regional office</h4>
+              <a href=""
+                ><i class="fa fa-map-marker-alt me-2"></i>3th floor , F. No 2,
+                Prince Complex, Aprt, Chatrapati Nagar, Nagpur, Maharashtra
+                440015</a
+              >
+              <a href=""
+                ><i class="fas fa-envelope me-2"></i> admin@unisol.org.in</a
+              >
+              <a href=""><i class="fas fa-phone me-2"></i> +91 749 901 3846 </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="footer-item d-flex flex-column">
+              <h4 class="text-secondary mb-4">Our Services</h4>
+              <div class="dropdown">
+                <a
+                  class="btn btn-secondary dropdown-toggle"
+                  role="button"
+                  id="dropdownMenuLink"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-angle-right me-2"></i>
+                  HealthCare
+                </a>
+                <ul
+                  class="dropdown-menu bg-dark"
+                  style="margin-left: 140px"
+                  aria-labelledby="dropdownMenuLink"
+                >
+                  <li>
+                    <a href="medical-equip.html" class="dropdown-item"
+                      >Medical Equipment</a
+                    >
+                  </li>
+                  <li>
+                    <a href="screening.html" class="dropdown-item"
+                      >Screening Devices</a
+                    >
+                  </li>
+                  <li>
+                    <a href="infrastructure.html" class="dropdown-item"
+                      >Hospital Infrastructure</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <a
+                  class="btn btn-secondary dropdown-toggle"
+                  role="button"
+                  id="dropdownMenuLink"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-angle-right me-2"></i>
+                  Waste Management
+                </a>
+                <ul
+                  class="dropdown-menu bg-dark"
+                  style="margin-left: 140px"
+                  aria-labelledby="dropdownMenuLink"
+                >
+                  <li>
+                    <a href="waste-manag.html" class="dropdown-item"
+                      >Solid Waste Management</a
+                    >
+                  </li>
+                  <li>
+                    <a href="biomedical.html" class="dropdown-item"
+                      >Biomedical Waste Management</a
+                    >
+                  </li>
+                  <li>
+                    <a href="stp.html" class="dropdown-item"
+                      >Sewage Treatment Plant</a
+                    >
+                  </li>
+                  <li>
+                    <a href="etp.html" class="dropdown-item"
+                      >Effluent Treatment Plant</a
+                    >
+                  </li>
+                  <li>
+                    <a href="waste-water-manage.html" class="dropdown-item"
+                      >Kitchen Waste Management</a
+                    >
+                  </li>
+                  <li>
+                    <a href="clean-safe.html" class="dropdown-item"
+                      >Clean Safe Water</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <a
+                  class="btn btn-secondary dropdown-toggle"
+                  role="button"
+                  id="dropdownMenuLink"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-angle-right me-2"></i>
+                  Start-Up Projects
+                </a>
+                <ul
+                  class="dropdown-menu bg-dark"
+                  style="margin-left: 140px"
+                  aria-labelledby="dropdownMenuLink"
+                >
+                  <li>
+                    <a href="drone.html" class="dropdown-item"
+                      >Agricultural Drone</a
+                    >
+                  </li>
+                  <li>
+                    <a href="pallets.html" class="dropdown-item"
+                      >Automation in Pharmacy</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-2">
+            <div class="footer-item d-flex flex-column">
+              <h4 class="text-secondary mb-4">Privacy Policy</h4>
+              <div class="mb-1">
+                <a href="404.html" class=""
+                  ><i class="fas fa-angle-right me-2"></i> Terms Of Use</a
+                >
+              </div>
+              <div class="mb-3">
+                <a href="contact.html" class=""
+                  ><i class="fas fa-angle-right me-2"></i> Contact Us</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-4">
+            <h4 class="text-secondary mb-4">Contact Us</h4>
+            <div class="col-lg-12 wow fadeInRight" data-wow-delay="0.3">
+              <!-- <p class="mb-3">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a class="text-primary fw-bold" href="https://htmlcodex.com/contact-form">Download Now</a>.</p> -->
+              <form>
+                <div class="row g-4">
+                  <div class="col-lg-12 col-xl-6">
+                    <div class="form-floating">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder="Your Name"
+                      />
+                      <label for="name">Your Name</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-xl-6">
+                    <div class="form-floating">
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="Your Email"
+                      />
+                      <label for="email">Your Email</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-xl-6">
+                    <div class="form-floating">
+                      <input
+                        type="phone"
+                        class="form-control"
+                        id="phone"
+                        placeholder="Phone"
+                      />
+                      <label for="phone">Your Phone</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-xl-6">
+                    <div class="mb-3 bg-white rounded py-3">
+                      <div class="dropdown">
+                        <button
+                          class="border-0 bg-white dropdown-toggle new-muted"
+                          type="button"
+                          id="dropdownMenuButton"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Select Services
+                        </button>
+                        <ul
+                          class="dropdown-menu"
+                          aria-labelledby="dropdownMenuButton"
+                        >
+                          <li>
+                            <a class="dropdown-item" href="./medical-equip.html"
+                              >Health Care</a
+                            >
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="./waste-manag.html"
+                              >Waste Managment</a
+                            >
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="./start-up.html"
+                              >Start-Up-Projects</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-floating">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="subject"
+                        placeholder="Subject"
+                      />
+                      <label for="subject">Subject</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-floating">
+                      <textarea
+                        class="form-control"
+                        placeholder="Leave a message here"
+                        id="message"
+                        style="height: 160px"
+                      ></textarea>
+                      <label for="message">Message</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-primary w-100 py-3">
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-6 text-center text-md-start mb-md-0">
+            <span class="text-white">
+              <a href="#" class="border-bottom text-white">
+                <i class="fas fa-copyright text-light me-2"></i>Technokrate </a
+              >, All rights reserved.
+            </span>
+          </div>
+          <div class="col-md-6 text-center text-md-end text-white">
+            Designed By
+            <a class="border-bottom text-white" href="https://technokrate.com"
+              >Technokrate</a
+            >
+            Distributed By
+            <a class="border-bottom text-white" href="https://technokrate.com"
+              >Technokrate LTD. PVT.</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square back-to-top"
+      ><i class="fa fa-arrow-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
